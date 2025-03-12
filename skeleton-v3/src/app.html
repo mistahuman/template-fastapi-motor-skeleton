@@ -1,0 +1,49 @@
+<!doctype html>
+<html data-theme="terminus">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="%sveltekit.assets%/favicon.svg"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
+    <title>template-fastapi-motor-skeleton</title>
+    <!-- Theme and Mode -->
+    <script is:inline>
+      // function applyTheme(document) {
+      // 	const storedTheme = localStorage.getItem('theme');
+      // 	const defaultTheme = 'cerberus';
+      // 	const theme = storedTheme ?? defaultTheme;
+      // 	document.documentElement.setAttribute('data-theme', theme);
+      // }
+
+      function applyMode(document) {
+        const storedMode = localStorage.getItem("mode");
+        const preferredMode = window.matchMedia("(prefers-color-scheme: dark)")
+          .matches
+          ? "dark"
+          : "light";
+        const defaultMode = "dark";
+        const mode = storedMode ?? preferredMode ?? defaultMode;
+        document.documentElement.setAttribute("data-mode", mode);
+      }
+
+      // applyTheme(document);
+      applyMode(document);
+
+      document.addEventListener("astro:before-swap", (event) => {
+        // applyTheme(event.newDocument);
+        applyMode(event.newDocument);
+      });
+    </script>
+    %sveltekit.head%
+  </head>
+
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">%sveltekit.body%</div>
+  </body>
+</html>
