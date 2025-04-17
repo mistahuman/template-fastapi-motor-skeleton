@@ -29,8 +29,8 @@
             </div>
             <div class="space-y-2">
                 <p>Try editing the following:</p>
-                <p><code class="code">/fastapi/app/ for backend</code></p>
-                <p><code class="code">/ui/ for frontend</code></p>
+                <p><code class="code">fastapi/app/ for backend</code></p>
+                <p><code class="code">ui/ for frontend</code></p>
             </div>
             <div class="space-y-2">
                 <p>Try exampleitems:</p>

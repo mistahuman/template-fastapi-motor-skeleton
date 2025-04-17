@@ -1,4 +1,4 @@
-PROJECT_NAME := myappname
+PROJECT_NAME := fastapi-skeleton-template
 BACKEND_CONTAINER := $(PROJECT_NAME)_backend
 BACKEND_ID := $(shell docker ps -qf "name=$(BACKEND_CONTAINER)")
 
@@ -28,8 +28,13 @@ install:
 
 dev:
 	@cd fastapi; . venv/bin/activate; python -m app.main
+	
 ui:
 	@cd ui; npm run dev
+
+# prod:
+# 	@docker-compose -f docker-compose.prod.yml up -d --build
+
 run:
 	@docker-compose -p $(PROJECT_NAME) up -d --build
 
@@ -50,7 +55,7 @@ status:
 
 clean:
 	@echo "Cleaning up project containers and images..."
-	@docker-compose -p $(PROJECT_NAME) down --rmi local
+	@docker-compose -p $(PROJECT_NAME) down --rmi local  --remove-orphans
 	@docker image prune -f
 
 logs:

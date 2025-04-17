@@ -3,15 +3,30 @@ version: '3.8'
 services:
   backend:
     build: ./fastapi
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
     networks:
       - app_network
+
   frontend:
-    build: ./ui
-    ports:
-      - "3000:3000"
+    build: ./skeleton-v3
+    expose:
+      - "3000"
+    environment:
+      - BACKEND_URL=http://backend:8000
     depends_on:
+      - backend
+    networks:
+      - app_network
+      
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - frontend
       - backend
     networks:
       - app_network
