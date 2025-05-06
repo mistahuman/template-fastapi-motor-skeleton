@@ -1,7 +1,7 @@
 <script>
-    import Drawer from "$lib/components/generic/Drawer.svelte";
-    import Logo from "$lib/components/generic/Logo.svelte";
-    import Lightswitch from "$lib/components/generic/LightSwitch.svelte";
+    import Drawer from "$lib/components/basics/Drawer.svelte";
+    import Logo from "$lib/components/basics/Logo.svelte";
+    import Lightswitch from "$lib/components/basics/LightSwitch.svelte";
     // Icons
     import { Github } from "@lucide/svelte";
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import FooterBar from "$lib/components/generic/FooterBar.svelte";
-	import HeaderBar from "$lib/components/generic/HeaderBar.svelte";
+	import FooterBar from "$lib/components/basics/FooterBar.svelte";
+	import HeaderBar from "$lib/components/basics/HeaderBar.svelte";
 </script>
 
 <div class="grid h-screen grid-rows-[auto_1fr_auto] max-w-full">

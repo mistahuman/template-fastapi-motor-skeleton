@@ -1,6 +1,6 @@
 <script>
-	import IconKit from '$lib/components/generic/IconKit.svelte';
-	import SimpleIcon from "$lib/components/generic/SimpleIcon.svelte";
+	import IconKit from '$lib/components/basics/IconKit.svelte';
+	import SimpleIcon from "$lib/components/basics/SimpleIcon.svelte";
 
 	export let title;
 	export let content;
